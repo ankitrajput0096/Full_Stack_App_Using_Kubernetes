@@ -18,6 +18,9 @@ Full Stack Application using Spring boot, React, Redux, Material-ui, PostgreSQL 
         *  <This IP>    springapp.com
     * Open browser and search for : http://springapp.com/
     * That's All, your application is running
+    * `kubectl delete -f kubernetes-minikube-scripts/  ` => To delete all the services and deployments applied in kubernetes cluster
+    * `minikube stop ` => To stop the minikube cluster
+    * `minikube delete` => To delete the minikube cluster
 
 ## DockerHub repositories 
 The dockerhub repositories used in this project for backend and frontend docker images are as follows : 
