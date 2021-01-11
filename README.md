@@ -5,14 +5,14 @@ Full Stack Application using Spring boot, React, Redux, Material-ui, PostgreSQL 
 ## Getting Started
 There are two parts to this repository which are as follows : 
 * Kubernetes deployment of full stack application using kubernetes minikube.
-  * For this navigate to folder `kubernetes-minikube` and follow the steps provided in it.
+  * For this navigate to folder `Kubernetes-minikube` and follow the steps provided in it.
 * Kubernetes deployment of full stack application using kubernetes EKS.
   * Work in Progress
 
 ## DockerHub repositories 
 The dockerhub repositories used in this project for backend and frontend docker images are as follows : 
-* Backend Docker Image repository : https://hub.docker.com/repository/docker/ankitrajput/springboot_app_with_db
-* Frontend Docker Image repository : https://hub.docker.com/r/ankitrajput/frontend-app-react
+* `Backend Docker Image repository : https://hub.docker.com/repository/docker/ankitrajput/springboot_app_with_db `
+* `Frontend Docker Image repository : https://hub.docker.com/r/ankitrajput/frontend-app-react `
 
 ## Built With
 

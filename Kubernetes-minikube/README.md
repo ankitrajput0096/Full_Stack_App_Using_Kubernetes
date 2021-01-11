@@ -8,11 +8,11 @@ Full Stack Application using Spring boot, React, Redux, Material-ui, PostgreSQL 
 * Install kubectl cli for connecting and deploying apps in kubernetes cluster
     * `Please follow this page for installation : https://kubernetes.io/docs/tasks/tools/install-kubectl/   `
 * Once installation is complete, follow these commands : 
-    * minikube start   => To start minikube kubernetes cluster
-    * minikube addons enable ingress => To enable `ingress` addon in kubernetes cluster
-    * kubectl apply -f kubernetes-minikube-scripts/  => To deploy all the services and deployments in kubernetes cluster of full stack application
-    * kubectl get pods -w  => Wait till all the pods are in `Running` state
-    * kubectl get ingress -w  => Wail till `ADDRESS` has IP of the ingress
+    * `minikube start`   => To start minikube kubernetes cluster
+    * `minikube addons enable ingress` => To enable `ingress` addon in kubernetes cluster
+    * `kubectl apply -f kubernetes-minikube-scripts/ ` => To deploy all the services and deployments in kubernetes cluster of full stack application
+    * `kubectl get pods -w `  => Wait till all the pods are in `Running` state
+    * `kubectl get ingress -w ` => Wail till `ADDRESS` has IP of the ingress
     * Add `this IP` (which is under `ADDRESS`) to `/etc/host` file as
         *  127.0.0.1	localhost
         *  <This IP>    springapp.com
@@ -21,8 +21,8 @@ Full Stack Application using Spring boot, React, Redux, Material-ui, PostgreSQL 
 
 ## DockerHub repositories 
 The dockerhub repositories used in this project for backend and frontend docker images are as follows : 
-* Backend Docker Image repository : https://hub.docker.com/repository/docker/ankitrajput/springboot_app_with_db
-* Frontend Docker Image repository : https://hub.docker.com/r/ankitrajput/frontend-app-react
+* `Backend Docker Image repository : https://hub.docker.com/repository/docker/ankitrajput/springboot_app_with_db `
+* `Frontend Docker Image repository : https://hub.docker.com/r/ankitrajput/frontend-app-react `
 
 ## Built With
 
