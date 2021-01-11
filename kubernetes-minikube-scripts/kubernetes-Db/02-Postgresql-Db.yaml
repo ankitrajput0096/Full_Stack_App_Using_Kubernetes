@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: postgresql-db-deployment
+  labels:
+    app: postgresql-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgresql-db
+  template:  
+    metadata:
+      labels: 
+        app: postgresql-db
+    spec:    
+      containers:
+        - name: postgresql-db-image
+          image: postgres:10.3
+          ports: 
+            - containerPort: 5432           
+          env:           
+            - name: POSTGRES_USER
+              value: "ankit"        # RDS DB Username is 'ankit'     
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: kubernetes-password
+                  key: db-password                   

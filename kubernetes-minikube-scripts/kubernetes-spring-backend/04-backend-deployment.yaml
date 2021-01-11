@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -f my-docker-compose.yml
+    kompose.service.type: LoadBalancer
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: backend
+  name: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      io.kompose.service: backend
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -f my-docker-compose.yml
+        kompose.service.type: LoadBalancer
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: backend
+    spec:
+      containers:
+      - image: ankitrajput/springboot_app_with_db:4.0.0
+        imagePullPolicy: ""
+        name: backend
+        ports:
+        - containerPort: 8080
+        env:    
+            - name: POSTGRES_URL
+              value: "postgresql-db-service"        
+            - name: POSTGRES_PORT
+              value: "5432"                        
+            - name: POSTGRES_USER
+              value: "ankit"        # RDS DB Username is 'ankit'     
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: kubernetes-password
+                  key: db-password     
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}
