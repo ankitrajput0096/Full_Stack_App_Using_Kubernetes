@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  annotations:
+    kompose.service.type: LoadBalancer
+  labels:
+    frontend.service: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      frontend.service: frontend
+  template:
+    metadata:
+      annotations:
+        kompose.service.type: LoadBalancer
+      labels:
+        frontend.service: frontend
+    spec:
+      containers:
+      - name: frontend-react-app-image
+        image: ankitrajput/frontend-app-react:2.0.0
+        ports:
+        - containerPort: 8082
+      restartPolicy: Always

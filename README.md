@@ -1,53 +1,18 @@
-# Dockerized Full Stack Application
+# Full Stack Application Using Kubernetes
 
-Dockerized Full Stack Application using Spring boot, React, Redux, Material-ui, PostgreSQL and Docker.
+Full Stack Application using Spring boot, React, Redux, Material-ui, PostgreSQL and Docker using Kubernetes
 
 ## Getting Started
+There are two parts to this repository which are as follows : 
+* Kubernetes deployment of full stack application using kubernetes minikube.
+  * For this navigate to folder `kubernetes-minikube` and follow the steps provided in it.
+* Kubernetes deployment of full stack application using kubernetes EKS.
+  * Work in Progress
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See running for notes on how to run the project on a system.
-
-### Prerequisites
-
-1. Clone the project to your local environment:
-    ```
-    git clone https://github.com/ankitrajput0096/Dockerized_Postgres_SpringBoot_React
-    ```
-
-2. You need Docker to be installed:
-
-    #### Windows:
-    https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe
-    
-    #### Mac:
-    https://download.docker.com/mac/stable/Docker.dmg
-    
-    #### Ubuntu:
-    https://docs.docker.com/install/linux/docker-ce/ubuntu/
-
-### Installing
-
-Once you have docker installed on your environment, install the project dependencies via:
-
-Build docker Image:
-
-```
-docker-compose build
-```
-
-Start docker:
-
-```
-docker-compose up
-```
-
-## Running
-
-Start docker:
-```
-docker-compose up
-```
-
-Your application should be now running on http://localhost:8082
+## DockerHub repositories 
+The dockerhub repositories used in this project for backend and frontend docker images are as follows : 
+* Backend Docker Image repository : https://hub.docker.com/repository/docker/ankitrajput/springboot_app_with_db
+* Frontend Docker Image repository : https://hub.docker.com/r/ankitrajput/frontend-app-react
 
 ## Built With
 
@@ -58,6 +23,7 @@ Your application should be now running on http://localhost:8082
 * [React](https://reactjs.org/) - React
 * [Redux](https://redux.js.org/) - Redux
 * [Material-Ui](https://material-ui.com/) - Material-Ui
+* [Kubernetes](https://kubernetes.io/) - Kubernetes
 
 ## Contributing
 
@@ -71,7 +37,3 @@ If you have any improvement suggestions please create a pull request and I'll re
 ## License
 
 This project is licensed under the MIT License
-
-## Acknowledgments
-
-* Big thanks to Pivotal for Spring Boot framework, React by facebook and Docker team.

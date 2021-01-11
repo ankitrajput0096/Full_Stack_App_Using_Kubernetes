@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  annotations:
+    kompose.service.type: LoadBalancer
+  labels:
+    backend.service: backend
+spec:
+  type: LoadBalancer
+  selector:
+    backend.service: backend
+  ports:
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
+
+

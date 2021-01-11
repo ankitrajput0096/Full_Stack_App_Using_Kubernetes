@@ -1,34 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: backend-deployment
   annotations:
-    kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -f my-docker-compose.yml
     kompose.service.type: LoadBalancer
-    kompose.version: 1.21.0 (992df58d8)
-  creationTimestamp: null
   labels:
-    io.kompose.service: backend
-  name: backend
+    backend.service: backend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: backend
-  strategy: {}
+      backend.service: backend
   template:
     metadata:
       annotations:
-        kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -f my-docker-compose.yml
         kompose.service.type: LoadBalancer
-        kompose.version: 1.21.0 (992df58d8)
-      creationTimestamp: null
       labels:
-        io.kompose.service: backend
+        backend.service: backend
     spec:
       containers:
-      - image: ankitrajput/springboot_app_with_db:4.0.0
-        imagePullPolicy: ""
-        name: backend
+      - name: backend-spring-app-image
+        image: ankitrajput/springboot_app_with_db:4.0.0
         ports:
         - containerPort: 8080
         env:    
@@ -42,9 +34,5 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: kubernetes-password
-                  key: db-password     
-        resources: {}
+                  key: db-password
       restartPolicy: Always
-      serviceAccountName: ""
-      volumes: null
-status: {}

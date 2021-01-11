@@ -1,3 +1,9 @@
+# NOTE :
+# Create new docker images for frontend using this docker file with image name in pattern as follows
+# Pattern : ankitrajput/frontend-app-react:<version>
+# Check and increase version by 1
+# Sample Pattern : ankitrajput/frontend-app-react:2.0.0
+
 # Base Image ubuntu
 FROM ubuntu:18.04
 
@@ -15,4 +21,4 @@ WORKDIR /react_app/react_app
 RUN npm install
 
 # running the react program
-CMD ["npm", "run", "prod"]
+CMD ["npm", "run", "kubernetes"]

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  annotations:
+    kompose.service.type: LoadBalancer
+  labels:
+    frontend.service: frontend
+spec:
+  type: LoadBalancer
+  selector:
+    frontend.service: frontend
+  ports:
+  - port: 8082
+    targetPort: 8082
+

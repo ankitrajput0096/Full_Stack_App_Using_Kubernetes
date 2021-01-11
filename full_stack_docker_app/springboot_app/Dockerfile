@@ -1,3 +1,9 @@
+# NOTE :
+# Create new docker images for backend using this docker file with image name in pattern as follows
+# Pattern : ankitrajput/springboot_app_with_db:<version>
+# Check and increase version by 1
+# Sample Pattern : ankitrajput/springboot_app_with_db:4.0.0
+
 # Base Image ubuntu
 FROM ubuntu:18.04
 
