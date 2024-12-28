@@ -1,6 +1,6 @@
 # Full Stack Application Using Kubernetes
 
-Full Stack Application using Spring boot, React, Redux, Material-ui, PostgreSQL and Docker using Kubernetes
+This repository features a full-stack application with a Spring Boot backend, React and Redux frontend, Material-UI styling, and PostgreSQL, containerized with Docker and deployed on Kubernetes. It includes a Minikube deployment setup with detailed instructions in the Kubernetes-minikube folder.
 
 ## Getting Started
 There are two parts to this repository which are as follows : 
